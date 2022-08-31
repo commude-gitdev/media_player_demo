@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:background="#ff0">
+
         <TextView
             android:id="@+id/txtFile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginTop="5dp"
             android:text="Chọn file"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
+
         <Button
             android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/txtFile"
+            android:layout_below="@id/txtFile"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="151dp"
-            android:layout_marginTop="79dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="10dp"
             android:text="Chọn" />
     </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -43,42 +44,83 @@
             android:id="@+id/txtNameMusic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Chọn File nhạc trong máy"
             android:textAlignment="center"
-            android:text="Đúng người đúng thời điểm"
             android:textColor="#ff00"
-            android:textSize="25sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
+
+        <SeekBar
+            android:id="@+id/seekbarSong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtNameMusic"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/txtTimeBegin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekbarSong"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="00:00"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtTimeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/seekbarSong"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:text="4:00"
+            android:textSize="20sp" />
 
         <ImageView
             android:id="@+id/imgPrev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="100dp"
+            android:layout_below="@id/seekbarSong"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="35dp"
             app:srcCompat="@drawable/prev" />
 
         <ImageView
             android:id="@+id/imgNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="273dp"
-            android:layout_marginTop="100dp"
+            android:layout_below="@id/seekbarSong"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="35dp"
             app:srcCompat="@drawable/next" />
 
         <ImageView
             android:id="@+id/imgPlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="147dp"
-            android:layout_marginTop="100dp"
+            android:layout_below="@id/seekbarSong"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
             app:srcCompat="@drawable/play" />
 
+        <ListView
+            android:id="@+id/listViewSong"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/imgPlay"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp" />
 
     </RelativeLayout>
 
